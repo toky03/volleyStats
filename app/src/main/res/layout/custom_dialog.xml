@@ -1,0 +1,60 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/spielername"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/etPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/position"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etNummer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nummer"
+        android:inputType="text" />
+
+    <CheckBox
+        android:id="@+id/cbInGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cbstammspieler" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.82"
+            android:text="@string/CancelButton" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.70" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Save" />
+    </LinearLayout>
+
+</LinearLayout>

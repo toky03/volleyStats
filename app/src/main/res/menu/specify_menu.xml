@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mnAss"
+        android:title="Ass" />
+    <item android:id="@+id/mnAnspielfehler" android:title="Anspielfehler"/>
+    <item android:id="@+id/mnNetzBeruhrung" android:title="Netzberührung"/>
+    <item android:id="@+id/mnTechFehler" android:title="Technischer Fehler"/>
+
+</menu>

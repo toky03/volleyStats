@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/colTeam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Defaultteam"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/colTime"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="@string/defaultTime" />
+
+        <TextView
+            android:id="@+id/colPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Defaultpoint" />
+
+        <TextView
+            android:id="@+id/colCause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Defaultcause" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

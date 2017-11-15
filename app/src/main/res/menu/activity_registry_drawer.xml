@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/load_Team"
+            android:icon="@android:drawable/stat_sys_download"
+            android:title="Importieren" />
+        <item
+            android:id="@+id/new_Team"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Team erstellen" />
+    </group>
+
+    <item
+        android:id="@+id/mnshow_Stats"
+        android:icon="@android:drawable/ic_menu_upload"
+        android:title="Statistiken anzeigen" />
+    <item
+        android:id="@+id/mnsettings"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Einstellungen" />
+    <item android:title="Teams">
+        <menu>
+            <item
+                android:id="@+id/mnteam1"
+                android:icon="@android:drawable/ic_menu_myplaces"
+                android:title="Team 1" />
+            <item
+                android:id="@+id/mnteam2"
+                android:icon="@android:drawable/ic_menu_myplaces"
+                android:title="Team 2" />
+        </menu>
+    </item>
+
+</menu>

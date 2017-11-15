@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/colPlayer"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:text="Spieler"
+            android:textSize="24sp"
+            android:layout_weight="0.26" />
+
+        <TextView
+            android:id="@+id/colNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/colPosition"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_weight="0.21"
+            android:text="Position" />
+
+        <TextView
+            android:id="@+id/colCorePlayer"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_weight="0.21"
+            android:text="Position" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">Volley Stats</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Spiel neu Starten</string>
+
+
+    <string name="name_des_teams">Name des Teams</string>
+    <string name="speichern">Speichern</string>
+
+
+    <string name="SatzA">Aktueller Satz</string>
+    <string name="SatzP">Satz Punkte</string>
+    <string name="SatzG">Satz gewinne</string>
+    <string name="doppelpunkt"> : </string>
+
+    <string name="bNG">Neues Spiel</string>
+    <string name="button3">Teams wählen</string>
+    <string name="button4">Teamnamen Speichern</string>
+
+    <string name="title_activity_new_team">Team konfigurieren</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="ItemSwitch">Seite wechseln</string>
+    <string name="menuBack">Rückgängig</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Passwort (optional)</string>
+    <string name="action_sign_in">Anmelden oder Registrieren</string>
+    <string name="action_sign_in_short">Einloggen</string>
+    <string name="error_invalid_email">Diese Email ist nicht Gültig</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_settings">Einstellungen</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">Hautpeinstellungen</string>
+
+    <string name="pref_title_social_recommendations">Soziale Kontakte</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Namensanzeige</string>
+    <string name="pref_default_display_name">Marco Jakob</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Dateien &amp; synchronisation</string>
+
+    <string name="pref_title_sync_frequency">Synchronisations frequenz</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minuten</item>
+        <item>30 minuten</item>
+        <item>1 stunde</item>
+        <item>3 stunde</item>
+        <item>6 stunde</item>
+        <item>Nie</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Eintrag 1</item>
+        <item>Eintrag 2</item>
+        <item>Eintrag 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System synchronisations einstellungen</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">Neue Einstellungen</string>
+
+    <string name="pref_title_ringtone">Klingelton</string>
+    <string name="pref_ringtone_silent">Leise</string>
+
+    <string name="pref_title_vibrate">Vibration</string>
+    <string name="defaultTime">00:00:00</string>
+    <string name="Defaultcause">Cause</string>
+    <string name="Defaultpoint">Point</string>
+    <string name="Defaultteam">Team</string>
+    <string name="addPlayer">Spieler hinzufügen</string>
+    <string name="nummer">Nummer</string>
+    <string name="position">Position</string>
+    <string name="spielername">Spielername</string>
+    <string name="Save">Speichern</string>
+    <string name="CancelButton">Abbrechen</string>
+    <string name="cbstammspieler">Stammspieler</string>
+
+
+</resources>
