@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "38662506607",
+    "firebase_url": "https://volleystats-ad42c.firebaseio.com",
+    "project_id": "volleystats-ad42c",
+    "storage_bucket": "volleystats-ad42c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38662506607:android:db3706a85419485b",
+        "android_client_info": {
+          "package_name": "tokyproduction.volleystats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38662506607-gtonoc09ch2onajtc9r242unlobeicou.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tokyproduction.volleystats",
+            "certificate_hash": "1cb05e2c788d34d4db3ef89ea7623f63de945a43"
+          }
+        },
+        {
+          "client_id": "38662506607-dtrq55d71plaofhidt7ppv9ahbb8l2ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEionje2VA_wIVAFKl9oLIu0i-Q8MxlEI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38662506607-dtrq55d71plaofhidt7ppv9ahbb8l2ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
