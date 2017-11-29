@@ -9,6 +9,7 @@ import android.os.Message;
 
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
+import android.util.Log;
 import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,6 +24,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -42,6 +49,10 @@ public class Registry extends AppCompatActivity
     private String winningTeam = "";
     private String cause ="-";
     private String causedPlayer="-";
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+    DatabaseReference dbTeam1 = database.getReference("Team1");
+    DatabaseReference dbTeam2 = database.getReference("Team2");
 
     Game myGame = new Game();
     StopWatch stpWatch = new StopWatch();
@@ -55,17 +66,14 @@ public class Registry extends AppCompatActivity
 
 
     // Beispielcode zum Hinzufügen von Team und Spieler
-    Team team1 = new Team("Heim");
+    Team team1;
+
+    Team team2;
+
+    public Registry(){
 
 
-
-
-
-
-    Team team2 = new Team("Gast");
-
-
-
+    }
 
     Handler mHandler = new Handler() {
 
@@ -88,6 +96,7 @@ public class Registry extends AppCompatActivity
                 default:
                     break;
 
+
             }
         }
 
@@ -102,6 +111,9 @@ public class Registry extends AppCompatActivity
         setContentView(R.layout.activity_registry);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
 
         buL = (Button) findViewById(R.id.buttonL);
         tvTime =(TextView) findViewById(R.id.tvTime);
@@ -166,10 +178,38 @@ public class Registry extends AppCompatActivity
                     }
                 }
         );
+
+        dbTeam1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                team1 = dataSnapshot.getValue(Team.class);
+                String value = dataSnapshot.getValue(String.class);
+                Log.d("Team 1", "Value is "+value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        dbTeam2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                team2 = dataSnapshot.getValue(Team.class);
+                String value = dataSnapshot.getValue(String.class);
+                Log.d("Team2", "Value is "+value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         startNewGame();
 
 
-                    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -299,14 +339,15 @@ public class Registry extends AppCompatActivity
 
         builderStart.show();
 
-        myGame.reset();
-        myGame.addTeam(team1);
-        myGame.addTeam(team2);
+
 
         team1.reset();
         team1.addPlayer("Beispielspieler 1", 03,"Angriff");
         team2.reset();
         team2.addPlayer("Gegner", 03,"Angriff");
+        myGame.reset();
+        myGame.addTeam(team1);
+        myGame.addTeam(team2);
         actualizeView();
     }
 
@@ -356,6 +397,7 @@ public class Registry extends AppCompatActivity
 
 
                 startActivityForResult(intentTeam,1);
+
 
 
             } else if (id == R.id.mnteam2) {
