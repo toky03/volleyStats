@@ -17,11 +17,18 @@ class Team implements Serializable{
 
 
 
+    Team(){
+        this.points=0;
+        this.teamname = "Default";
+        this.winningSets = 0;
+
+    }
     Team(String name){
         this.points=0;
         this.teamname = name;
         this.winningSets = 0;
     }
+
     void PointsToZero(){
         lastPoint.add(points);
         points =0;

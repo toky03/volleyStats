@@ -29,6 +29,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
@@ -54,6 +55,7 @@ public class Registry extends AppCompatActivity
     DatabaseReference dbTeam1 = database.getReference("Team1");
     DatabaseReference dbTeam2 = database.getReference("Team2");
 
+
     Game myGame = new Game();
     StopWatch stpWatch = new StopWatch();
     final int REFRESH_RATE = 100;
@@ -65,15 +67,11 @@ public class Registry extends AppCompatActivity
     Boolean switchside = false;
 
 
-    // Beispielcode zum Hinzufügen von Team und Spieler
+
     Team team1;
 
     Team team2;
 
-    public Registry(){
-
-
-    }
 
     Handler mHandler = new Handler() {
 
@@ -112,8 +110,18 @@ public class Registry extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        team1 = new Team("Heim");
+        team1.addPlayer("Test Spieler Heim",03,"Angriff");
 
 
+        team2 = new Team("Gast");
+        team2.addPlayer("Test Spieler Gast",03,"Angriff");
+
+
+        dbTeam1.setValue(team1);
+        dbTeam2.setValue(team2);
+        dbTeam1.keepSynced(true);
+        dbTeam2.keepSynced(true);
 
         buL = (Button) findViewById(R.id.buttonL);
         tvTime =(TextView) findViewById(R.id.tvTime);
@@ -182,9 +190,10 @@ public class Registry extends AppCompatActivity
         dbTeam1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                team1 = dataSnapshot.getValue(Team.class);
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("Team 1", "Value is "+value);
+                team1 =  dataSnapshot.getValue(Team.class);
+
+
+                actualizeView();
             }
 
             @Override
@@ -197,8 +206,8 @@ public class Registry extends AppCompatActivity
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 team2 = dataSnapshot.getValue(Team.class);
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("Team2", "Value is "+value);
+                actualizeView();
+
             }
 
             @Override
@@ -206,6 +215,9 @@ public class Registry extends AppCompatActivity
 
             }
         });
+
+
+
         startNewGame();
 
 
@@ -342,9 +354,7 @@ public class Registry extends AppCompatActivity
 
 
         team1.reset();
-        team1.addPlayer("Beispielspieler 1", 03,"Angriff");
         team2.reset();
-        team2.addPlayer("Gegner", 03,"Angriff");
         myGame.reset();
         myGame.addTeam(team1);
         myGame.addTeam(team2);
@@ -442,6 +452,9 @@ public class Registry extends AppCompatActivity
 
 
     public void actualizeView(){
+
+        dbTeam1.setValue(team1);
+        dbTeam2.setValue(team2);
 
 
         //Punkte Team1
